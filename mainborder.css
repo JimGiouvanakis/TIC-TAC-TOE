@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 50px; */
+  /* max-width: 500px; */
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 200px;
+  height: 200px;
+  border: 5px solid black;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.cell:not(:last-child) {
+  border-right: none;
+}
+
+.row:not(:last-child) .cell {
+  border-bottom: none;
+}
+
+.player1 {
+}
+
+.player2 {
+}
+
+.symbol::before {
+  font-size: 100px;
+  background-color: red;
+  /* line-height: 1; */
+  /* text-align: center; */
+  /* width: 100px;
+  height: 100px; */
+}
+
+.x::before {
+  content: "X";
+  font-size: 210px;
+  line-height: 1;
+}
+
+.o::before {
+  content: "O";
+  font-size: 210px;
+  line-height: 1;
+}
