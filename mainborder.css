@@ -17,6 +17,8 @@
   border: 5px solid black;
   text-align: center;
   vertical-align: middle;
+  font-size: 210px;
+  line-height: 1;
 }
 
 .cell:not(:last-child) {
@@ -42,14 +44,14 @@
   height: 100px; */
 }
 
-.x::before {
+/* .x::before {
   content: "X";
   font-size: 210px;
   line-height: 1;
-}
+} */
 
-.o::before {
+/* .o::before {
   content: "O";
   font-size: 210px;
   line-height: 1;
-}
+} */
