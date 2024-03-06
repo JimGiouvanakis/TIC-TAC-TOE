@@ -16,6 +16,24 @@ function CheckWinner(board, symbol) {
     ) {
       return board[i][0];
     }
+    if (
+      board[0][i] === symbol &&
+      board[1][i] === symbol &&
+      board[2][i] === symbol
+    ) {
+      return board[0][i];
+    }
+
+    if (board[0][0] === symbol && board[1][1] === symbol && board[2][2]) {
+      return board[0][0];
+    }
+    if (
+      board[0][2] === symbol &&
+      board[1][1] === symbol &&
+      board[2][0] === symbol
+    ) {
+      return board[0][2];
+    }
   }
 }
 
@@ -34,45 +52,16 @@ function RestartGame(board) {
   return board;
 }
 
-// Array.from(cells).forEach((cell, index) => {
-// row2 = Math.floor(index / 3);
-// col2 = index % 3;
-// flag = 0;
-// if (player == `0`) {
-//   if (row == `2`) {
-//     Array.from(cells).forEach((cell, index) => {
-//       row3 = Math.floor(index / 3);
-//       col3 = index % 3;
-
-//       if (row3 == `2` && col3 == `0`) {
-//         if (cell.textContent == "X") {
-//           flag = `1`;
-//         }
-//       }
-//       if (row3 == `2` && col3 == `1` && flag == `1`) {
-//         if (cell.textContent == "X") {
-//           flag = `2`;
-//         }
-//       }
-//       if (row3 == `2` && col3 == `2` && flag == `2`) {
-//         if (cell.textContent == "X") {
-//           flag = `3`;
-//         }
-//       }
-//     });
-//   }
-//   console.log(`flag`, flag);
-//   if (flag == `3`) {
-//     console.log(`winner`, player);
-//   }
-// if (row2 === row + 1 && col2 === col + 1) {
-//   if (cell.classList.contains(`o`)) {
-//     Array.from(cells).forEach((cell, index) => {
-//       if (row2 === row + 2 && col2 === col + 2) {
-//       }
-//     });
-//   } else if (cell.classList.contains("x")) {
-//   }
-// }
-//}
-// });
+function Winner(winner) {
+  if (winner == "X") {
+    board = RestartGame(board);
+    document.getElementById("Modal-Header").textContent =
+      "The Winner is the Player 1!!";
+    OpenModel();
+  } else if (winner == "O") {
+    board = RestartGame(board);
+    document.getElementById("Modal-Header").textContent =
+      "The Winner is the Player 2!!";
+    OpenModel();
+  }
+}
